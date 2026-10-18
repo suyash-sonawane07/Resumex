@@ -1,0 +1,22 @@
+name: resume-intelligence
+
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      SBERT_MODEL_NAME: all-MiniLM-L6-v2
+      SPACY_MODEL_NAME: en_core_web_sm
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    cpus: 2.0
+    mem_limit: 2g
+    mem_reservation: 1g
+    restart: "no"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s

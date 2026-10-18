@@ -1,0 +1,35 @@
+# Core PDF Processing (Member 1)
+pdfplumber>=0.10.0
+
+# NLP & NER (Member 1)
+spacy>=3.7.0
+
+# Sentence Embeddings (Member 2)
+sentence-transformers>=2.2.0
+
+# Similarity Computation (Member 2)
+scikit-learn>=1.3.0
+
+# Fuzzy String Matching (Member 2)
+fuzzywuzzy>=0.18.0
+python-Levenshtein>=0.21.0
+
+# Data Validation & Contracts (All Members)
+pydantic>=2.0.0
+
+# Web UI (Member 3)
+streamlit>=1.28.0
+
+# Visualization (Member 3)
+plotly>=5.18.0
+
+# API (Member 3 - optional decoupled serving)
+fastapi>=0.104.0
+uvicorn>=0.24.0
+
+# Testing (All Members)
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Benchmark asset generation (QA: scripts/generate_benchmark_resumes.py)
+reportlab>=4.0.0

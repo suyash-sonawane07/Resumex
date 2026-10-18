@@ -1,0 +1,112 @@
+{
+  "baselines": [
+    "jaccard",
+    "tfidf",
+    "sbert",
+    "hybrid"
+  ],
+  "k_values": [
+    5,
+    10
+  ],
+  "per_job_ndcg": {
+    "ds-001": {
+      "jaccard": {
+        "nDCG@5": 0.8908,
+        "nDCG@10": 0.9616
+      },
+      "tfidf": {
+        "nDCG@5": 1.0,
+        "nDCG@10": 0.9971
+      },
+      "sbert": {
+        "nDCG@5": 0.899,
+        "nDCG@10": 0.9745
+      },
+      "hybrid": {
+        "nDCG@5": 1.0,
+        "nDCG@10": 1.0
+      }
+    },
+    "be-002": {
+      "jaccard": {
+        "nDCG@5": 0.8908,
+        "nDCG@10": 0.9673
+      },
+      "tfidf": {
+        "nDCG@5": 0.9899,
+        "nDCG@10": 0.9876
+      },
+      "sbert": {
+        "nDCG@5": 1.0,
+        "nDCG@10": 0.9988
+      },
+      "hybrid": {
+        "nDCG@5": 1.0,
+        "nDCG@10": 1.0
+      }
+    },
+    "do-003": {
+      "jaccard": {
+        "nDCG@5": 0.9126,
+        "nDCG@10": 0.947
+      },
+      "tfidf": {
+        "nDCG@5": 1.0,
+        "nDCG@10": 0.9963
+      },
+      "sbert": {
+        "nDCG@5": 1.0,
+        "nDCG@10": 0.9984
+      },
+      "hybrid": {
+        "nDCG@5": 1.0,
+        "nDCG@10": 1.0
+      }
+    }
+  },
+  "mean_ndcg": {
+    "jaccard": {
+      "nDCG@5": 0.8981,
+      "nDCG@10": 0.9586
+    },
+    "tfidf": {
+      "nDCG@5": 0.9966,
+      "nDCG@10": 0.9937
+    },
+    "sbert": {
+      "nDCG@5": 0.9663,
+      "nDCG@10": 0.9906
+    },
+    "hybrid": {
+      "nDCG@5": 1.0,
+      "nDCG@10": 1.0
+    }
+  },
+  "latency_s_per_doc": {
+    "resume_01_ds_strong.pdf": 0.2727,
+    "resume_02_backend_strong.pdf": 0.1813,
+    "resume_03_devops_strong.pdf": 0.1499,
+    "resume_04_ds_synonym.pdf": 0.1197,
+    "resume_05_backend_synonym.pdf": 0.1264,
+    "resume_06_devops_moderate.pdf": 0.1224,
+    "resume_07_multicolumn_ds.pdf": 0.1545,
+    "resume_08_multicolumn_backend.pdf": 0.3315,
+    "resume_09_adversarial.pdf": 0.126,
+    "resume_10_weak_chef.pdf": 0.1158
+  },
+  "mean_latency_s": 0.17,
+  "max_latency_s": 0.3315,
+  "latency_sla_s": 3.0,
+  "latency_pass": true,
+  "adversarial_hybrid_ranks": {
+    "ds-001": 9,
+    "be-002": 9,
+    "do-003": 8
+  },
+  "weights": {
+    "w_core": 0.5,
+    "w_context": 0.2,
+    "w_semantic": 0.3
+  }
+}
